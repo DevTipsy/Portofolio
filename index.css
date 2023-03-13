@@ -1,0 +1,276 @@
+/* * {border: solid 1px red;} */
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.logoHeader {
+    display: flex;
+}
+
+.logoHeader img {
+    height: 50px;
+    display: flex;
+}
+
+/* Main */
+main {
+    max-width: 1024px;
+    margin: 50px auto;
+}
+
+/* Sections */
+section {
+    display: flex;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Intro */
+#Intro p {
+    margin: auto;
+}
+
+/* Cartes-Compétences */
+.bloc-section {
+    display: block;
+    }
+
+.bloc-section:hover > div p.intro {
+    background-color: blue;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 31px;
+    color: white;
+}
+.bloc-section:hover > div p.competences {
+    background-color: blue;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 100px;
+    color: white;
+}
+.bloc-section:hover > div p.projets {
+    background-color: blue;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 50px;
+    color: white;
+}
+.bloc-section:hover > div p.contact {
+    background-color: blue;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 58px;
+    color: white;
+}
+
+.nav-section p {
+    margin: 0;
+    padding: 5px;
+}
+
+.compétences {
+    gap: 2%;
+}
+
+.cards-compétences {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+    padding: 2%;
+    box-sizing: border-box;
+    margin: auto;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+    line-height: 5px;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+.cards-compétences:hover {
+    transform: scale(0.98);
+}
+
+.cards-compétences img {
+    height: 19px;
+    padding: 3px;
+    -webkit-user-drag: none;
+}
+
+/*Cartes-Projets*/
+.cards-projets {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 10px;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    color: white;
+    background: white;
+    border-radius: 8px;
+    width: calc(49% - 10px);
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: transform 0.2s ease-in-out;
+}
+    /*Couleur dégradé pour la bordure de carte*/
+    .card::after {
+      position: absolute;
+      content: "";
+      top: calc(-1 * 3px);
+      left: calc(-1 * 3px);
+      z-index: -1;
+      width: calc(100% + 3px * 2);
+      height: calc(100% + 3px * 2);
+      background: linear-gradient(
+        60deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(179, 85%, 66%));
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: calc(2 * 5px);
+      animation: moveGradient 4s alternate infinite;
+    }
+    @keyframes moveGradient {
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+.card:hover {
+    transform: scale(0.98);
+}
+  
+.card-img {
+    display: flex;
+    margin: auto;
+    height: 60px;
+    width: 115px;
+    object-fit: contain;
+    -webkit-user-drag: none;
+}
+
+.card-text1, .card-text2 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    padding: 0 2% 0 2%;
+}
+
+.card-text1 img {
+    height: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    -webkit-user-drag: none;
+}
+
+a img {
+    display: flex;
+    height: 12px;
+    -webkit-user-drag: none;
+}
+
+a {
+    margin: 2% 0px 2% 0px;
+}
+
+/* Contact */
+.card-contact {
+    width: calc(100% - 10px);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-media-box:hover {
+    transform: scale(0.98);
+} 
+
+.card-contact a {
+    margin: 0 15px;
+}
+
+.card-contact img {
+    height: 30px;
+    -webkit-user-drag: none;
+}
+.social-media-box {
+    border: solid 1px black;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0% 5%;
+    transition: transform 0.2s ease-in-out;
+    height: 70px;
+}
+
+.social-media-box p {
+    margin: 20% auto;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: auto;
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+}
+  
+.logoFooter img {
+    margin: auto;
+    height: 50px;
+    display: flex;
+    -webkit-user-drag: none;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+      width: calc(50% - 10px);
+    }
+}
+  
+@media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .logoHeader img {
+        display: flex;
+        height: 40px;
+    }
+}
